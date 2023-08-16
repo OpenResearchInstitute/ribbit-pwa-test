@@ -1,12 +1,14 @@
 {
   "name": "rattlegram-pwa",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "bump": "npm version patch"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -16,5 +18,6 @@
   },
   "dependencies": {
     "@nuxt/content": "^2.7.2"
-  }
+  },
+  "author": "Rich Clingman, K0OZK"
 }
