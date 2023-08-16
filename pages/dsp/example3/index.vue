@@ -26,6 +26,16 @@
 </template>
 
 <script setup>
+// Hack example so we remember our stream and disconnect microphone
+let audioStream;
+onBeforeRouteLeave(() => {
+  if (audioStream) {
+    audioStream.getAudioTracks().forEach(track => {
+      track.stop();
+    })
+  }
+})
+
 function toggle_rainbow() {}
 function toggle_phosphor() {}
 function toggle_background() {}
@@ -36,7 +46,7 @@ function change_gain(v)
   document.getElementById("input-gain").innerHTML = "gain=" + v + "dB";
 }
 
-// wait for page to load before loading wasm
+// Hack example to wait for page to load before loading wasm
 onMounted(() => {
 WebAssembly.instantiateStreaming(fetch("/dsp/example3/example.wasm"))
     .then(obj => {
@@ -102,6 +112,9 @@ WebAssembly.instantiateStreaming(fetch("/dsp/example3/example.wasm"))
       };
       navigator.mediaDevices.getUserMedia(constraints)
           .then(stream => {
+
+            audioStream = stream
+
             var context = new AudioContext();
             var source = context.createMediaStreamSource(stream);
             var processor = context.createScriptProcessor(0, 1, 1);
