@@ -25,7 +25,7 @@
 
 </template>
 
-<script>
+<script setup>
 function toggle_rainbow() {}
 function toggle_phosphor() {}
 function toggle_background() {}
@@ -35,7 +35,10 @@ function change_gain(v)
   gain = Math.pow(10, v / 10);
   document.getElementById("input-gain").innerHTML = "gain=" + v + "dB";
 }
-WebAssembly.instantiateStreaming(fetch("example.wasm"))
+
+// wait for page to load before loading wasm
+onMounted(() => {
+WebAssembly.instantiateStreaming(fetch("/dsp/example3/example.wasm"))
     .then(obj => {
       const wasm = obj.instance.exports;
       const buffer = wasm.memory.buffer;
@@ -60,6 +63,9 @@ WebAssembly.instantiateStreaming(fetch("example.wasm"))
       var scope_rgba = new Uint8ClampedArray(buffer, wasm.scope_pointer(), 4*wasm.scope_length());
       var scope_image = new ImageData(scope_rgba, wasm.scope_width(), wasm.scope_height());
       const scope_canvas = document.getElementById("scope");
+      if (!scope_canvas) {
+        return
+      }
       scope_canvas.width = 32 + wasm.scope_width();
       scope_canvas.height = 32 + wasm.scope_height();
       const scope_ctx = scope_canvas.getContext("2d");
@@ -150,8 +156,8 @@ WebAssembly.instantiateStreaming(fetch("example.wasm"))
           window.requestAnimationFrame(dummy);
         }
         window.requestAnimationFrame(dummy);
-      });
-    });
-
+      })
+    })
+})
 </script>
 

@@ -37,10 +37,18 @@ Go to [http://localhost:3000/](http://localhost:3000/) to verify working
 
 ### Add basic Web Assembly code
 
+### Build the experiment3 wasm file
 
+This comes from 
+[Ahmet Inan's DSP WASM Experiment](https://www.aicodix.de/example3/)
 
+To use Ahmet's Makefile, we need clang++ compiler. We can get that by installing them from 
+Visual Studio Build Tools, part of
+[MS Visual Studio Community Edition](https://visualstudio.microsoft.com/downloads/).
 
-
+* Hit Windows key and open the Developer Command Shell
+* cd to the example3 directory
+* make example.wasm
 
 
 

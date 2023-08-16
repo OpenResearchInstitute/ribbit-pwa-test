@@ -10,7 +10,7 @@ CXXFLAGS = -ffreestanding -fvisibility=hidden --target=wasm32
 LDFLAGS = -nostdlib -Wl,--allow-undefined,--export-dynamic,--export=__wasm_call_ctors
 
 CXXFLAGS += -std=c++11 -W -Wall -Ofast -fno-exceptions -fno-rtti
-CXXFLAGS += -I$(HOME)/dsp
+CXXFLAGS += -I$(HOMEPATH)/dsp # from $(HOME) for Windows Developer Command Shell
 
 example.wasm.gz: example.wasm
 	gzip -f -n example.wasm
