@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
-        '@vite-pwa/nuxt'
+        '@vite-pwa/nuxt',
+        '@nuxt/content',
     ],
     pwa: {
         manifest: {
