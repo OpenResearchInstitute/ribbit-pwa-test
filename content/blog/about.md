@@ -11,7 +11,7 @@ Thursday, August 17, 2023
 ### Install the Web App
 
 This test Rattlegram Web App is available at 
-[Rattlegram.K0OZK.com](https://rattlegram.k0ozk.com/).
+[Rattlegram.<callsign></callsign>.com](https://rattlegram.k0ozk.com/).
 
 If you're using a compatible browser, you should see an install icon in the browser address bar 
 or a prompt at the bottom of your mobile screen. 
@@ -86,5 +86,5 @@ This is my first real attempt at a PWA, so I'm sure there are a lot of things to
 I'm a software engineer -- full-stack, back-end, and cloud. 
 And I'm an Extra Class Amateur (without much actual radio experience other than 2m).
 
-Rich Clingman, K0OZK
+<a href="https://k0ozk.com/" target="_blank" class="pr-3">Rich Clingman, <callsign></callsign></a>
 <br>Ozark, Missouri, USA

@@ -52,8 +52,9 @@
       <div class="container" style="max-width: 1024px;">
         <div class="content has-text-right">
           <p>
-            <a href="https://k0ozk.com/" target="_blank" class="pr-3">Rich Clingman, K0OZK</a> •
-            <a href="https://www.ribbitradio.org/" target="_blank" class="pr-3">Ribbit Radio</a>
+            <a href="https://k0ozk.com/" target="_blank">Rich Clingman, <callsign></callsign></a>
+            •
+            <a href="https://www.ribbitradio.org/" target="_blank">Ribbit Radio</a>
             <br class="is-hidden-tablet"/>
             Rattlegram Test PWA
           </p>
