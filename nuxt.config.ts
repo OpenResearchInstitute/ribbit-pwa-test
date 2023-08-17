@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     modules: [
         '@vite-pwa/nuxt',
+        '@vueuse/nuxt',
         '@nuxt/content',
     ],
     pwa: {
@@ -40,6 +41,20 @@ export default defineNuxtConfig({
         devOptions: {
             enabled: true,
             type: "module",
+        }
+    },
+// @ts-ignore
+    css: [
+        "@/assets/style/main.sass",
+    ],
+    vite: {
+        css: {
+            preprocessorOptions: {
+                sass: {
+                    // allows $primary, etc., to be used in any style/vue<style>
+                    additionalData: '@use "@/assets/style/_colors.sass" as *\n'
+                }
+            }
         }
     },
 })

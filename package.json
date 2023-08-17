@@ -11,13 +11,20 @@
     "bump": "npm version patch"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.7.2",
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
     "@vite-pwa/nuxt": "^0.1.0",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "sass": "^1.63.3",
+    "sass-loader": "^10.4.1"
   },
   "dependencies": {
-    "@nuxt/content": "^2.7.2"
+    "@vueuse/components": "^10.1.2",
+    "@vueuse/core": "^10.1.2",
+    "@vueuse/integrations": "^10.1.2",
+    "@vueuse/nuxt": "^10.1.2",
+    "bulma": "^0.9.4"
   },
   "author": "Rich Clingman, K0OZK"
 }
