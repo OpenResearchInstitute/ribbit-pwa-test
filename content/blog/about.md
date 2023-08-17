@@ -60,8 +60,8 @@ Then, with one click, we release the latest awesomeness.
 
 No need to reinstall the app. 
 My experience is that if you right-click/refresh or close/open the app, your device is instantly updated to the latest release. 
-This is not simply "a cached webpage." This is a full-blown installed application on par with every other app. 
-It should continue to run without Internet access indefinitely.
+This is not simply "a cached webpage." This is a full-blown installed application on par with every other app.
+When properly configured, it should continue to run without Internet access indefinitely.
 And we can add message caching so they'll be uploaded once the Internet is accessible.
 
 ### Under the Hood
@@ -70,7 +70,7 @@ And we can add message caching so they'll be uploaded once the Internet is acces
 
 This PWA is built using Nuxt3/VueJs3 with its Content module (see the simple blog pages), and Bulma CSS/SASS. 
 It's currently hosted on my paid Netlify account. 
-Netlify offers free accounts that should support the Ribbit development.
+Netlify offers free accounts that should support the Ribbit development and full deployment.
 
 ### How I Discovered Ribbit
 
