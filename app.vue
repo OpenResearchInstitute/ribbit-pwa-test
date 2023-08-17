@@ -23,7 +23,6 @@
           <br>{{ timestamp }}
             </nuxtLink>
 
-            <nuxtLink to="/" class="navbar-item has-text-right">Home</nuxtLink>
             <nuxtLink to="/dsp/example3" class="navbar-item has-text-right">Example3</nuxtLink>
             <nuxtLink to="/blog" class="navbar-item has-text-right">Blog</nuxtLink>
             <nuxtLink to="/blog/about" class="navbar-item has-text-right">About</nuxtLink>
@@ -53,7 +52,7 @@
       <div class="container" style="max-width: 1024px;">
         <div class="content has-text-right">
           <p>
-            <a href="https://www.ribbitradio.org/" class="pr-3">Ribbit Radio</a>
+            <a href="https://www.ribbitradio.org/" target="_blank" class="pr-3">Ribbit Radio</a>
             <br class="is-hidden-tablet"/>
             Rattlegram Test PWA
           </p>
