@@ -1,6 +1,6 @@
 ---
-title: Rattle Blog
-description: Rattling and Blogging
+title: Ribbit Blog
+description: Ribbiting and Blogging
 author: Rich Clingman, K0OZK
 ---
 

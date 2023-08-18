@@ -1,8 +1,8 @@
-# rattlegram-pwa
+# Ribbit Test PWA
 
 "A new digital text messaging mode for HF/VHF/UHF recreational and emergency communications."
 
-Testing use of Web Assembly DSP to create a device-independent Rattlegram (Ribbit) Web Application.
+Testing use of Web Assembly DSP to create a device-independent Ribbit Web Application.
 
 For information on Ribbit go to
 [The Ribbit Website](https://www.ribbitradio.org/).
@@ -14,7 +14,7 @@ Rich Clingman, K0OZK.
 
 ### Create Repo - DONE
 
-[rattlegram-pwa on GitHub](https://github.org/richclingman/rattlegram-pwa/)
+[ribbit-pwa-test on GitHub](https://github.org/richclingman/ribbit-pwa-test/)
 
 ### Install basic NUXT3 app
 

@@ -2,12 +2,11 @@
   <div>
     <VitePwaManifest/>
 
-
     <nav class="navbar has-shadow is-primary">
       <div class="container px-3" style="max-width: 1024px;">
         <div class="navbar-brand">
           <nuxtLink to="/" class="navbar-item">
-            <img src="/icons/icon_64x64.png" alt="Rattlegram" class="" style="max-height: 50px;">
+            <img src="/icons/icon_64x64.png" alt="Ribbit PWA Test" class="" style="max-height: 50px;">
           </nuxtLink>
           <div class="navbar-burger" @click="navActive = !navActive">
             <span></span>
@@ -37,16 +36,7 @@
 
     </nav>
 
-    <!--    <nav>-->
-    <!--      <nuxt-link to="/">Home</nuxt-link>-->
-    <!--      ...-->
-    <!--      <nuxt-link to="/dsp/example3">Example 3</nuxt-link>-->
-    <!--      <div>-->
-    <!--        GPS: {{ latitude }} {{ longitude }} {{ timestamp }}-->
-    <!--      </div>-->
-    <!--    </nav>-->
-
-    <div class="has-text-centered">
+    <div class="has-text-centered px-3">
       <div class="content container has-text-left" style="max-width: 850px;">
         <NuxtPage/>
       </div>
@@ -62,7 +52,7 @@
             •
             <a href="https://www.ribbitradio.org/" target="_blank">Ribbit Radio</a>
             <br class="is-hidden-tablet"/>
-            Rattlegram Test PWA
+            Ribbit PWA Test
           </p>
         </div>
       </div>

@@ -7,9 +7,9 @@ export default defineNuxtConfig({
     ],
     pwa: {
         manifest: {
-            name: 'K0OZK Rattlegram PWA',
-            short_name: "Rattlegram",
-            description: "Testing Rattlegram (Ribbit) DSP in a device-agnostic Progressive Web Application.",
+            name: 'Ribbit PWA Test',
+            short_name: "Ribbit Test",
+            description: "Testing Ribbit DSP in a device-agnostic Progressive Web Application.",
 
             id: "/", // starting url
             icons: [

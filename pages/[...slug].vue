@@ -14,7 +14,7 @@
 
             <p>
             Please head to the
-              <NuxtLink to="/">Rattlegram Home Page</NuxtLink>
+              <NuxtLink to="/">Home Page</NuxtLink>
             or select a page from the navigation bar above.
             </p>
           </blockquote>

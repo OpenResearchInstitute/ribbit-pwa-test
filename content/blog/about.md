@@ -1,17 +1,17 @@
 ---
-title: About Rattlegram PWA
-description: What's this Rattling all about? Ribbit!
+title: About Ribbit PWA Test
+description: What's this all about? Ribbit!
 author: Rich Clingman, K0OZK
 ---
 
-# About This Rattlegram Test PWA
+# About This Ribbit PWA Test
 
 Thursday, August 17, 2023
 
 ### Install the Web App
 
-This test Rattlegram Web App is available at 
-[Rattlegram.<callsign></callsign>.com](https://rattlegram.k0ozk.com/).
+This test Ribbit PWA Test is available at 
+[ribbit-pwa-test.<callsign></callsign>.com](https://ribbit-pwa-test.k0ozk.com/).
 
 If you're using a compatible browser, you should see an install icon in the browser address bar 
 or a prompt at the bottom of your mobile screen. 
@@ -66,7 +66,7 @@ And we can add message caching so they'll be uploaded once the Internet is acces
 
 ### Under the Hood
 
-<a href="https://github.com/richclingman/rattlegram-pwa" target="_blank">Public Repository for this PWA</a>.
+<a href="https://github.com/richclingman/ribbit-pwa-test" target="_blank">Public Repository for this PWA</a>.
 
 This PWA is built using Nuxt3/VueJs3 with its Content module (see the simple blog pages), and Bulma CSS/SASS. 
 It's currently hosted on my paid Netlify account. 
