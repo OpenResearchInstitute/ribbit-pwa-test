@@ -78,29 +78,37 @@ const latitude = ref(0)
 const longitude = ref(0)
 const timestamp = ref(0)
 
-// TODO: In development, another timer is started when dev pushes a page change. Need to prevent multiple timers.
-//   (Refresh page to get back to one timer.)
+if (process.client && navigator && "geolocation" in navigator) {
+  function getGeoData() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log('got geo', position)
+      latitude.value = position.coords.latitude
+      longitude.value = position.coords.longitude
+      timestamp.value = new Date(position.timestamp).toUTCString()
+    })
+  }
 
-function getGeoData() {
-  navigator.geolocation.getCurrentPosition((position) => {
-    console.log('got geo', position)
-    latitude.value = position.coords.latitude
-    longitude.value = position.coords.longitude
-    timestamp.value = new Date(position.timestamp).toUTCString()
+  let geoTimerInstance;
+
+  function clearGeoTimer() {
+    if (geoTimerInstance) {
+      clearTimeout(geoTimerInstance)
+    }
+  }
+
+  function startGeoTimer() {
+    clearGeoTimer()
+
+    geoTimerInstance = setTimeout(() => {
+      getGeoData()
+      startGeoTimer()
+    }, 5000)
+  }
+
+  onUnmounted(clearGeoTimer)
+  onMounted(() => {
+    getGeoData()
+    startGeoTimer()
   })
 }
-
-if (process.client) {
-  if (navigator && "geolocation" in navigator) {
-    getGeoData();
-  }
-}
-
-(function gpsTimer() {
-  setTimeout(() => {
-    getGeoData()
-    gpsTimer()
-  }, 5000)
-})()
-
 </script>
