@@ -23,7 +23,9 @@
               <br>{{ timestamp }}
             </nuxtLink>
 
-            <a class="navbar-item has-text-right" :href="'https://www.google.com/maps/search/?api=1&query=' + latitude  + ',' + longitude" target="_blank">Local Map</a>
+            <a class="navbar-item has-text-right"
+               :href="'https://www.google.com/maps/search/?api=1&query=' + latitude  + ',' + longitude" target="_blank">Local
+              Map</a>
 
             <nuxtLink to="/dsp/example3" class="navbar-item has-text-right">Example3</nuxtLink>
             <nuxtLink to="/blog" class="navbar-item has-text-right">Blog</nuxtLink>
@@ -76,19 +78,29 @@ const latitude = ref(0)
 const longitude = ref(0)
 const timestamp = ref(0)
 
-// TODO: This is only set on page load and NEVER updated. Add a ticker to keep updated.
+// TODO: In development, another timer is started when dev pushes a page change. Need to prevent multiple timers.
+//   (Refresh page to get back to one timer.)
+
+function getGeoData() {
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log('got geo', position)
+    latitude.value = position.coords.latitude
+    longitude.value = position.coords.longitude
+    timestamp.value = new Date(position.timestamp).toUTCString()
+  })
+}
 
 if (process.client) {
   if (navigator && "geolocation" in navigator) {
-    console.log('got geo')
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position)
-      latitude.value = position.coords.latitude
-      longitude.value = position.coords.longitude
-      timestamp.value = new Date(position.timestamp).toUTCString()
-
-    })
+    getGeoData();
   }
 }
+
+(function gpsTimer() {
+  setTimeout(() => {
+    getGeoData()
+    gpsTimer()
+  }, 5000)
+})()
 
 </script>
