@@ -18,10 +18,12 @@
 
         <div class="navbar-menu" :class="{ 'is-active': navActive }" id="nav-links">
           <div class="navbar-end" @click="navActive = false">
-            <nuxtLink to="/blog/gps">
-          {{ latitude }} {{ longitude }}
-          <br>{{ timestamp }}
+            <nuxtLink class="navbar-item has-text-right" to="/blog/gps">
+              GPS: {{ latitude }}, {{ longitude }}
+              <br>{{ timestamp }}
             </nuxtLink>
+
+            <a class="navbar-item has-text-right" :href="'https://www.google.com/maps/search/?api=1&query=' + latitude  + ',' + longitude" target="_blank">Local Map</a>
 
             <nuxtLink to="/dsp/example3" class="navbar-item has-text-right">Example3</nuxtLink>
             <nuxtLink to="/blog" class="navbar-item has-text-right">Blog</nuxtLink>
@@ -33,14 +35,14 @@
 
     </nav>
 
-<!--    <nav>-->
-<!--      <nuxt-link to="/">Home</nuxt-link>-->
-<!--      ...-->
-<!--      <nuxt-link to="/dsp/example3">Example 3</nuxt-link>-->
-<!--      <div>-->
-<!--        GPS: {{ latitude }} {{ longitude }} {{ timestamp }}-->
-<!--      </div>-->
-<!--    </nav>-->
+    <!--    <nav>-->
+    <!--      <nuxt-link to="/">Home</nuxt-link>-->
+    <!--      ...-->
+    <!--      <nuxt-link to="/dsp/example3">Example 3</nuxt-link>-->
+    <!--      <div>-->
+    <!--        GPS: {{ latitude }} {{ longitude }} {{ timestamp }}-->
+    <!--      </div>-->
+    <!--    </nav>-->
 
     <div class="has-text-centered">
       <div class="content container has-text-left" style="max-width: 850px;">
@@ -52,7 +54,9 @@
       <div class="container" style="max-width: 1024px;">
         <div class="content has-text-right">
           <p>
-            <a href="https://k0ozk.com/" target="_blank">Rich Clingman, <callsign></callsign></a>
+            <a href="https://k0ozk.com/" target="_blank">Rich Clingman,
+              <callsign></callsign>
+            </a>
             •
             <a href="https://www.ribbitradio.org/" target="_blank">Ribbit Radio</a>
             <br class="is-hidden-tablet"/>
@@ -71,6 +75,8 @@ const navActive = ref(false)
 const latitude = ref(0)
 const longitude = ref(0)
 const timestamp = ref(0)
+
+// TODO: This is only set on page load and NEVER updated. Add a ticker to keep updated.
 
 if (process.client) {
   if (navigator && "geolocation" in navigator) {
