@@ -28,9 +28,10 @@ For this to happen, your browser must support:
 
 ## Verify GPS
 
-You should see your location and GMT/UTC time displayed in the navigation/menu.
-If you click on the Local Map tab, it should open Google Maps at your current location
-(or the location reported by your computer).
+You should see your location and GMT/UTC time displayed in the navigation/menu and footer.
+If you click on the Local Map tab, it should open Google Maps at your current location.
+(The location reported by your computer may be based on your IP Address 
+rather than your physical location.)
 
 ## Test the WASM & DSP
 

@@ -44,13 +44,13 @@
 
     <footer class="footer">
       <div class="container" style="max-width: 1024px;">
-        <div class="is-pulled-left border-green">
-          <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
+        <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
+          <div class="is-pulled-left border-green">
             Location: {{ latitude }}, {{ longitude }}
             <br>Altitude {{ altitude }} Speed: {{ speed }}
-            <br>{{ timestamp }} (+{{milliseconds}} ms)
-          </nuxtLink>
-        </div>
+            <br>{{ timestamp }} (+{{ milliseconds }} ms)
+          </div>
+        </nuxtLink>
 
         <div class="is-pulled-right">
           <p>
@@ -71,6 +71,7 @@
 
 <script setup>
 import useGeoData from "./composables/useGeoData";
+
 const {longitude, latitude, altitude, speed, timestamp, milliseconds} = useGeoData()
 
 const navActive = ref(false)

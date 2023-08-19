@@ -5,7 +5,8 @@
     <p>This is a WASM/DSP test is from
       <a href="https://www.aicodix.de/example3/" target="_blank">Ahmet Inan's DSP WASM Example 3</a>.
       The purpose of this page is to verify that your device can correctly process using
-      <a href="https://github.com/aicodix/dsp" target="_blank">Ahmet's DSP library</a>.
+      <a href="https://github.com/aicodix/dsp" target="_blank">Ahmet's DSP library</a> and
+      <a href="https://webassembly.org/" target="_blank">WASM</a>.
     </p>
     <p>
       If working properly, your screen should have three renderings of the sound that your microphone hears.
