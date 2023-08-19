@@ -44,6 +44,14 @@
 
     <footer class="footer">
       <div class="container" style="max-width: 1024px;">
+        <div class="content has-text-left">
+          <nuxtLink class="navbar-item has-text-right is-size-7" to="/blog/gps">
+            Location: {{ latitude }}, {{ longitude }}
+            <br>Altitude {{ altitude }} Speed: {{ speed }}
+            <br>{{ timestamp }}
+          </nuxtLink>
+        </div>
+
         <div class="content has-text-right">
           <p>
             <a href="https://k0ozk.com/" target="_blank">Rich Clingman,
@@ -62,43 +70,8 @@
 </template>
 
 <script setup>
+import useGeoData from "./composables/useGeoData";
+const {longitude, latitude, altitude, speed, timestamp} = useGeoData()
+
 const navActive = ref(false)
-
-const latitude = ref(0)
-const longitude = ref(0)
-const timestamp = ref(0)
-
-if (process.client && navigator && "geolocation" in navigator) {
-  function getGeoData() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      console.log('got geo', position)
-      latitude.value = position.coords.latitude
-      longitude.value = position.coords.longitude
-      timestamp.value = new Date(position.timestamp).toUTCString()
-    })
-  }
-
-  let geoTimerInstance;
-
-  function clearGeoTimer() {
-    if (geoTimerInstance) {
-      clearTimeout(geoTimerInstance)
-    }
-  }
-
-  function startGeoTimer() {
-    clearGeoTimer()
-
-    geoTimerInstance = setTimeout(() => {
-      getGeoData()
-      startGeoTimer()
-    }, 5000)
-  }
-
-  onUnmounted(clearGeoTimer)
-  onMounted(() => {
-    getGeoData()
-    startGeoTimer()
-  })
-}
 </script>
