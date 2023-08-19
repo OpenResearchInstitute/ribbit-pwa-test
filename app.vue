@@ -44,15 +44,15 @@
 
     <footer class="footer">
       <div class="container" style="max-width: 1024px;">
-        <div class="content has-text-left">
-          <nuxtLink class="navbar-item has-text-right is-size-7" to="/blog/gps">
+        <div class="is-pulled-left border-green">
+          <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
             Location: {{ latitude }}, {{ longitude }}
             <br>Altitude {{ altitude }} Speed: {{ speed }}
             <br>{{ timestamp }} (+{{milliseconds}} ms)
           </nuxtLink>
         </div>
 
-        <div class="content has-text-right">
+        <div class="is-pulled-right">
           <p>
             <a href="https://k0ozk.com/" target="_blank">Rich Clingman,
               <callsign></callsign>
@@ -75,3 +75,9 @@ const {longitude, latitude, altitude, speed, timestamp, milliseconds} = useGeoDa
 
 const navActive = ref(false)
 </script>
+
+<style lang="sass">
+.border-green
+  border: 1px solid green
+  padding: 5px
+</style>
