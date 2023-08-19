@@ -48,7 +48,7 @@
           <nuxtLink class="navbar-item has-text-right is-size-7" to="/blog/gps">
             Location: {{ latitude }}, {{ longitude }}
             <br>Altitude {{ altitude }} Speed: {{ speed }}
-            <br>{{ timestamp }}
+            <br>{{ timestamp }} (+{{milliseconds}} ms)
           </nuxtLink>
         </div>
 
@@ -71,7 +71,7 @@
 
 <script setup>
 import useGeoData from "./composables/useGeoData";
-const {longitude, latitude, altitude, speed, timestamp} = useGeoData()
+const {longitude, latitude, altitude, speed, timestamp, milliseconds} = useGeoData()
 
 const navActive = ref(false)
 </script>
