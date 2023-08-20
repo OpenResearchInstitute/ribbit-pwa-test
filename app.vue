@@ -23,7 +23,7 @@
             </nuxtLink>
 
             <a class="navbar-item has-text-right"
-               :href="'https://www.google.com/maps/search/?api=1&query=' + latitude  + ',' + longitude" target="_blank">Local
+               :href="localMapUrl" target="_blank">Local
               Map</a>
 
             <nuxtLink to="/dsp/example3" class="navbar-item has-text-right">Example3</nuxtLink>
@@ -72,9 +72,8 @@
 <script setup>
 import useGeoData from "./composables/useGeoData";
 
-const {longitude, latitude, altitude, speed, timestamp, milliseconds} = useGeoData()
-
 const navActive = ref(false)
+const {longitude, latitude, altitude, speed, timestamp, milliseconds, localMapUrl} = useGeoData()
 </script>
 
 <style lang="sass">
