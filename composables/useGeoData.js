@@ -1,7 +1,13 @@
 const latitude = ref(0)
 const longitude = ref(0)
+const accuracy = ref(0)
+
 const altitude = ref(0)
+const altitudeAccuracy = ref(0)
+
+const heading = ref(0)
 const speed = ref(0)
+
 const timestamp = ref(0)
 const milliseconds = ref(0)
 const localMapUrl = ref(0)
@@ -13,6 +19,14 @@ function updateGeoData() {
 
         latitude.value = position.coords.latitude
         longitude.value = position.coords.longitude
+
+        accuracy.value = position.coords.accuracy
+        altitude.value = position.coords.altitude
+        altitudeAccuracy.value = position.coords.altitudeAccuracy
+        heading.value = position.coords.heading
+        speed.value = position.coords.speed
+
+
         const date = new Date(position.timestamp)
         timestamp.value = date.toUTCString()
         milliseconds.value = date.getUTCMilliseconds()
@@ -28,11 +42,16 @@ export default () => {
     return {
         longitude,
         latitude,
+        accuracy,
+
         altitude,
+        altitudeAccuracy,
+
+        heading,
         speed,
+
         timestamp,
         milliseconds,
-        updateGeoData,
         localMapUrl,
     }
 }
@@ -53,7 +72,8 @@ if (process.client && navigator && "geolocation" in navigator) {
         geoTimerInstance = setTimeout(() => {
             updateGeoData()
             startGeoTimer()
-        }, 5000)
+        // }, 5000) // TODO: Restore to slower refresh rate
+        }, 500)
     }
 
     updateGeoData()

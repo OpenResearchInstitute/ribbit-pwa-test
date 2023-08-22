@@ -36,6 +36,10 @@
 
     </nav>
 
+    <div style="color: white; background-color: black; padding: 10px;">
+      {{ geo }}
+    </div>
+
     <div class="has-text-centered px-3">
       <div class="content container has-text-left" style="max-width: 850px;">
         <NuxtPage/>
@@ -75,6 +79,9 @@ import useGeoData from "./composables/useGeoData";
 
 const navActive = ref(false)
 const {longitude, latitude, altitude, speed, timestamp, milliseconds, localMapUrl} = useGeoData()
+
+const geo = useGeoData() // TODO: Temp show all geo in top of page
+
 </script>
 
 <style lang="sass">
