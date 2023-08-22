@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import pkg from './package.json'
+
+// @ts-ignore
 export default defineNuxtConfig({
     modules: [
         '@vite-pwa/nuxt',
@@ -43,7 +47,6 @@ export default defineNuxtConfig({
             type: "module",
         }
     },
-// @ts-ignore
     css: [
         "@/assets/style/main.sass",
     ],
@@ -56,5 +59,10 @@ export default defineNuxtConfig({
                 }
             }
         }
+    },
+    runtimeConfig: {
+        public: {
+            packageVersion: pkg.version,
+        },
     },
 })

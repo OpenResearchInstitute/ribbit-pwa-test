@@ -9,7 +9,7 @@ const localMapUrl = ref(0)
 function updateGeoData() {
     navigator.geolocation.getCurrentPosition((position) => {
 
-        console.log('got geo', position)
+        // console.log('got geo', position)
 
         latitude.value = position.coords.latitude
         longitude.value = position.coords.longitude

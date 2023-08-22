@@ -60,7 +60,7 @@
             •
             <a href="https://www.ribbitradio.org/" target="_blank">Ribbit Radio</a>
             <br class="is-hidden-tablet"/>
-            Ribbit PWA Test
+            Ribbit PWA Test v{{runtimeConfig.public.packageVersion}}
           </p>
         </div>
       </div>
@@ -70,6 +70,7 @@
 </template>
 
 <script setup>
+const runtimeConfig = useRuntimeConfig()
 import useGeoData from "./composables/useGeoData";
 
 const navActive = ref(false)
