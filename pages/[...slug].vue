@@ -13,9 +13,9 @@
             </p>
 
             <p>
-            Please head to the
+              Please head to the
               <NuxtLink to="/">Home Page</NuxtLink>
-            or select a page from the navigation bar above.
+              or select a page from the navigation bar above.
             </p>
           </blockquote>
 
@@ -23,10 +23,17 @@
 
         </template>
       </ContentDoc>
+
+      <GeoData v-if="$route.fullPath === '/blog/gps'"/>
+
     </div>
   </main>
 </template>
 
 <script>
+import GeoData from "../components/global/GeoData";
 
+export default {
+  components: {GeoData}
+}
 </script>

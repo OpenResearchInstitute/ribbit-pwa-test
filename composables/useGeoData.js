@@ -52,6 +52,9 @@ export default () => {
 
         timestamp,
         milliseconds,
+
+        updateGeoData,
+
         localMapUrl,
     }
 }
@@ -72,8 +75,7 @@ if (process.client && navigator && "geolocation" in navigator) {
         geoTimerInstance = setTimeout(() => {
             updateGeoData()
             startGeoTimer()
-        // }, 5000) // TODO: Restore to slower refresh rate
-        }, 500)
+        }, 5000)
     }
 
     updateGeoData()
