@@ -15,10 +15,10 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.3",
     "@vite-pwa/nuxt": "^0.1.0",
+    "maidenhead-qth-gridsquare": "github:richclingman/maidenhead-qth-gridsquare",
     "nuxt": "^3.6.5",
     "sass": "^1.63.3",
-    "sass-loader": "^10.4.1",
-    "maidenhead-qth-gridsquare": "file:../maidenhead-qth-gridsquare"
+    "sass-loader": "^10.4.1"
   },
   "dependencies": {
     "@vueuse/components": "^10.1.2",
