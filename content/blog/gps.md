@@ -10,7 +10,7 @@ For emergency communications, it's vital to know the sender's location and the
 precise time of the transmission. 
 And in contests, accurate position (and GridSquare) are needed.
 This app is using GS10 (10-character GridSquare code) which provides
-[an accuracy of 19 meters](https://github.com/richclingman/maidenhead-qth-gridsquare/blob/main/README.md#accuracy-provided-by-gridsquare).
+<a href="https://github.com/richclingman/maidenhead-qth-gridsquare/blob/main/README.md#accuracy-provided-by-gridsquare" target="_blank">an accuracy of 19 meters</a>
 
 To accomplish this, Ribbit utilizes the GPS in your computer or smartphone.
 
