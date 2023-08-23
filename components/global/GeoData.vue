@@ -3,7 +3,8 @@
     <tbody>
     <tr>
       <td>qth</td>
-      <td colspan="2">{{ qth }}</td>
+      <td>{{ qth.qth }}</td>
+      <td>{{ qth.spread }}</td>
     </tr>
     <tr>
       <td>latitude</td>
