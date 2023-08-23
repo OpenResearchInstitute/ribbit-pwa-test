@@ -24,7 +24,9 @@
         </template>
       </ContentDoc>
 
-      <GeoData v-if="$route.fullPath === '/blog/gps'"/>
+      <client-only>
+        <GeoData v-if="$route.fullPath === '/blog/gps'"/>
+      </client-only>
 
     </div>
   </main>

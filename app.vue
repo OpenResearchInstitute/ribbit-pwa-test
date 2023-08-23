@@ -17,10 +17,12 @@
 
         <div class="navbar-menu" :class="{ 'is-active': navActive }" id="nav-links">
           <div class="navbar-end" @click="navActive = false">
-            <nuxtLink class="navbar-item has-text-right" to="/blog/gps">
-              GPS: {{ latitude }}, {{ longitude }}
-              <br>{{ timestamp }}
-            </nuxtLink>
+            <client-only>
+              <nuxtLink class="navbar-item has-text-right" to="/blog/gps">
+                GPS: {{ latitude }}, {{ longitude }}
+                <br>{{ timestamp }}
+              </nuxtLink>
+            </client-only>
 
             <a class="navbar-item has-text-right"
                :href="localMapUrl" target="_blank">Local
@@ -44,13 +46,15 @@
 
     <footer class="footer">
       <div class="container" style="max-width: 1024px;">
-        <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
-          <div class="is-pulled-left border-green">
-            Location: {{ latitude }}, {{ longitude }}
-            <br>Altitude {{ altitude }} Speed: {{ speed }}
-            <br>{{ timestamp }} (+{{ milliseconds }} ms)
-          </div>
-        </nuxtLink>
+        <client-only>
+          <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
+            <div class="is-pulled-left border-green">
+              Location: {{ latitude }}, {{ longitude }}
+              <br>Altitude {{ altitude || 0 }} m; Speed: {{ speed || 0 }} m/sec
+              <br>{{ timestamp }} (+{{ milliseconds }} ms)
+            </div>
+          </nuxtLink>
+        </client-only>
 
         <div class="is-pulled-right">
           <p>
@@ -60,7 +64,7 @@
             •
             <a href="https://www.ribbitradio.org/" target="_blank">Ribbit Radio</a>
             <br class="is-hidden-tablet"/>
-            Ribbit PWA Test v{{runtimeConfig.public.packageVersion}}
+            Ribbit PWA Test v{{ runtimeConfig.public.packageVersion }}
           </p>
         </div>
       </div>
@@ -72,7 +76,6 @@
 <script setup>
 const runtimeConfig = useRuntimeConfig()
 
-import useGeoData from "./composables/useGeoData";
 const {longitude, latitude, altitude, speed, timestamp, milliseconds, localMapUrl} = useGeoData()
 
 const navActive = ref(false)
