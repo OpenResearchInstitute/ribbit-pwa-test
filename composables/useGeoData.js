@@ -40,7 +40,7 @@ function updateGeoData() {
         localMapUrl.value = `https://www.google.com/maps/search/?api=1&query=${latitude.value},${longitude.value}&time=${position.timestamp}`
         // console.log('local', localMapUrl.value)
 
-        qth.value = latLonToQth(latitude.value, longitude.value)
+        qth.value = latLonToQth(latitude.value, longitude.value, 10)
     })
 }
 

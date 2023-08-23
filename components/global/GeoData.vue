@@ -2,8 +2,9 @@
   <table class="table">
     <tbody>
     <tr>
-      <td>qth</td>
-      <td>{{ qth.qth }}</td>
+      <!--   TODO: LAYOUT with flex? On mobile, put 3rd TD under 2nd TD.   -->
+      <td>grid square</td>
+      <td>{{ qth.error || qth.qth }}</td>
       <td>{{ qth.spread }}</td>
     </tr>
     <tr>
@@ -38,7 +39,7 @@
     </tr>
     <tr>
       <td>heading</td>
-      <td>{{ heading || "0"}} deg</td>
+      <td>{{ heading || "0" }} deg</td>
       <td>{{ dms(heading) }} dms</td>
     </tr>
     <tr>
@@ -68,12 +69,14 @@ function feet(meters) {
 }
 
 function kph(mps) {
-  return Math.round(mps * 3.6 )
+  return Math.round(mps * 3.6)
 }
 
 function mph(mps) {
-  return Math.round(mps * 2.23694 )
+  return Math.round(mps * 2.23694)
 }
+
+// TODO: No negative numbers -- "N/S" & "E/W"
 
 function dms(decDeg) {
   const deg = Math.floor(Math.abs(decDeg)) * Math.sign(decDeg) // needed to guarantee correct "floor"
