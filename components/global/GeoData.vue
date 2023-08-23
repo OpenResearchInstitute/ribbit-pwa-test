@@ -47,6 +47,8 @@
 <script setup>
 import useGeoData from "@/composables/useGeoData";
 
+// TODO: Put all these values in useGeoData and provide in structure: latitude.dms, latitude.deg, etc.
+
 const {
   longitude, latitude, accuracy, altitude, altitudeAccuracy, heading, speed, timestamp, milliseconds, localMapUrl,
 } = useGeoData()
@@ -68,21 +70,11 @@ function mph(mps) {
 }
 
 function dms(decDeg) {
-  const deg = Math.round(decDeg) // TODO: **NOT** ROUND - works for negative numbers, but not positive
+  const deg = Math.floor(Math.abs(decDeg)) * Math.sign(decDeg) // needed to guarantee correct "floor"
   const minRemainder = Math.abs(decDeg - deg) * 60
   const min = Math.floor(minRemainder)
   const secRemainder = (minRemainder - min) * 60
-  const sec = Math.floor(secRemainder * 100) / 100
+  const sec = Math.round(secRemainder * 100) / 100
   return `${deg}° ${min}' ${sec}"`
 }
-
 </script>
-
-<style lang="sass" scoped>
-table
-  td
-    width: min-content
-    max-width: 100px
-  tr
-    max-width: 200px !important
-</style>
