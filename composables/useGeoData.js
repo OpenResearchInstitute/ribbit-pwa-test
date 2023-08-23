@@ -1,3 +1,5 @@
+import { latLonToQth } from 'maidenhead-qth-gridsquare'
+
 const latitude = ref(0)
 const longitude = ref(0)
 const accuracy = ref(0)
@@ -11,6 +13,8 @@ const speed = ref(0)
 const timestamp = ref(0)
 const milliseconds = ref(0)
 const localMapUrl = ref(0)
+
+const qth = ref(0)
 
 function updateGeoData() {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -35,6 +39,8 @@ function updateGeoData() {
         // TODO: WHY is url empty on page load? console.log shows value set, but navigation href is not.
         localMapUrl.value = `https://www.google.com/maps/search/?api=1&query=${latitude.value},${longitude.value}&time=${position.timestamp}`
         // console.log('local', localMapUrl.value)
+
+        qth.value = latLonToQth(latitude.value, longitude.value)
     })
 }
 
@@ -56,6 +62,8 @@ export default () => {
         updateGeoData,
 
         localMapUrl,
+
+        qth,
     }
 }
 

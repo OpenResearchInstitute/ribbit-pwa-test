@@ -2,6 +2,10 @@
   <table class="table">
     <tbody>
     <tr>
+      <td>qth</td>
+      <td colspan="2">{{ qth }}</td>
+    </tr>
+    <tr>
       <td>latitude</td>
       <td>{{ latitude }} deg</td>
       <td>{{ dms(latitude) }} dms</td>
@@ -50,7 +54,8 @@ import useGeoData from "@/composables/useGeoData";
 // TODO: Put all these values in useGeoData and provide in structure: latitude.dms, latitude.deg, etc.
 
 const {
-  longitude, latitude, accuracy, altitude, altitudeAccuracy, heading, speed, timestamp, milliseconds, localMapUrl,
+  longitude, latitude, accuracy, altitude, altitudeAccuracy,
+  heading, speed, timestamp, milliseconds, qth,
 } = useGeoData()
 
 function meters(meters) {
