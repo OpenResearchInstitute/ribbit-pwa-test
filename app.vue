@@ -46,15 +46,15 @@
 
     <footer class="footer">
       <div class="container" style="max-width: 1024px;">
-        <client-only>
-          <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
-            <div class="is-pulled-left border-green">
+        <nuxtLink class="has-text-right is-size-7" to="/blog/gps">
+          <div class="is-pulled-left border-green">
+            <client-only>
               Location: {{ latitude }}, {{ longitude }}
               <br>Altitude {{ altitude || 0 }} m; Speed: {{ speed || 0 }} m/sec
               <br>{{ timestamp }} (+{{ milliseconds }} ms)
-            </div>
-          </nuxtLink>
-        </client-only>
+            </client-only>
+          </div>
+        </nuxtLink>
 
         <div class="is-pulled-right">
           <p>

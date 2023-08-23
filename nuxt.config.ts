@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 import pkg from './package.json'
+import {searchForWorkspaceRoot} from "vite";
 
 // @ts-ignore
 export default defineNuxtConfig({
@@ -51,6 +52,16 @@ export default defineNuxtConfig({
         "@/assets/style/main.sass",
     ],
     vite: {
+        server: {
+            fs: {
+                allow: [
+                    searchForWorkspaceRoot(process.cwd()),
+
+                    // while developing npm package locally
+                    '../maidenhead-qth-gridsquare',
+                ],
+            }
+        },
         css: {
             preprocessorOptions: {
                 sass: {
