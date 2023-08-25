@@ -2,53 +2,22 @@
 
 "A new digital text messaging mode for HF/VHF/UHF recreational and emergency communications."
 
-Testing use of Web Assembly DSP to create a device-independent Ribbit Web Application.
-
 For information on Ribbit go to
 [The Ribbit Website](https://www.ribbitradio.org/).
 
-Initial testing by
-Rich Clingman, K0OZK.
+Testing use of Web Assembly DSP to create a device-independent Ribbit Web Application.
 
-## Planned Process
+This project is under the 
+[Open Research Institute](https://www.openresearch.institute/).
 
-### Create Repo - DONE
+The repository is hosted at
+[https://github.com/OpenResearchInstitute/ribbit-pwa-test](https://github.com/OpenResearchInstitute/ribbit-pwa-test)
 
-[ribbit-pwa-test on GitHub](https://github.org/richclingman/ribbit-pwa-test/)
+The test site is hosted on [Netlify](https://www.netlify.com/) at
+[https://ribbit-pwa-test.k0ozk.com/](https://ribbit-pwa-test.k0ozk.com/)
 
-### Install basic NUXT3 app
-
-Go to [http://localhost:3000/](http://localhost:3000/) to verify working
-
-### Add Netlify support
-
-
-### Set up Netlify for CI/CD from Repo
-
-
-### Add PWA support
-
-
-### Verify PWA on various devices
-
-
-### Add push notifications
-
-
-### Add basic Web Assembly code
-
-### Build the experiment3 wasm file
-
-This comes from 
-[Ahmet Inan's DSP WASM Experiment](https://www.aicodix.de/example3/)
-
-To use Ahmet's Makefile, we need clang++ compiler. We can get that by installing them from 
-Visual Studio Build Tools, part of
-[MS Visual Studio Community Edition](https://visualstudio.microsoft.com/downloads/).
-
-* Hit Windows key and open the Developer Command Shell
-* cd to the example3 directory
-* make example.wasm
+Initial development by
+[Rich Clingman, K0OZK](https://k0ozk.com/).
 
 
 
